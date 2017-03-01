@@ -1,0 +1,36 @@
+{
+  "name": "github-limitter",
+  "main": "index.js",
+  "author": "(http://about-hiroppy.com) abouthiroppy <git@about-hiroppy.com>",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "",
+  "files": [],
+  "keywords": [],
+  "homepage": "",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "lint": "eslint .",
+    "test": "nyc ava",
+    "test:watch": "nyc ava -w",
+    "postcover": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "tap": true
+  },
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "conventional-changelog-cli": "^1.2.0",
+    "eslint": "^3.16.1",
+    "eslint-config-sky": "^1.4.3",
+    "nyc": "^10.1.2"
+  }
+}
